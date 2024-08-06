@@ -13,8 +13,9 @@ jobs:
 
     - name: Nerdbank.GitVersioning
       uses: dotnet/nbgv@latest
-      setAllVars: true
-      stamp: true
+      with:
+        setAllVars: true
+        stamp: true
 
     # Create a zip from what's in this repo
     - name: Archive Release
