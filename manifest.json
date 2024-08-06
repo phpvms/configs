@@ -1,0 +1,15 @@
+{
+    "name": "default",
+    "aircraft": {
+      "path": "aircraft"
+    },
+    "rules": {
+      "path": "rules"
+    },
+    "scripts": {
+        "path": "sounds"
+    },
+    "sounds": {
+      "path": "sounds"
+    }
+  }
