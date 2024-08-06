@@ -11,15 +11,18 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-      # Create a zip from what's in this repo
+    - name: Nerdbank.GitVersioning
+      uses: dotnet/nbgv@latest
+      setAllVars: true
+      stamp: true
+
+    # Create a zip from what's in this repo
     - name: Archive Release
       uses: thedoctor0/zip-release@0.7.5
       with:
         type: 'zip'
-        directory: 'dist/'
-        path: '../'
-        filename: 'stable.zip'
-        exclusions: '*.git* /*node_modules/* .editorconfig dist'
+        filename: 'dist/stable.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig dist version.json'
         command: "mkdir -p dist"
 
     # List all the files that have been created
@@ -27,7 +30,7 @@ jobs:
       run: |
         find dist/ -maxdepth 2  -type f
 
-    - uses: BetaHuhn/do-spaces-action@v2
+    - uses: BetaHuhn/do-spaces-action@latest
       with:
         access_key: ${{ secrets.SPACE_ACCESS_KEY}}
         secret_key: ${{ secrets.SPACE_SECRET_KEY }}

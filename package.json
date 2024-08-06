@@ -1,0 +1,19 @@
+{
+    "name": "system_configs",
+    "version": "1.0.0",
+    "config": {
+        "aircraft": {
+            "path": "aircraft"
+        },
+        "rules": {
+            "path": "rules"
+        },
+        "scripts": {
+            "path": "sounds"
+        },
+        "sounds": {
+            "path": "sounds"
+        }
+    },
+    "private": true
+}
